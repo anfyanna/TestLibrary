@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='TestLibrary',
-    version='0.0.3',
+    version='0.0.0',
     author='Anna Liu',
     author_email='sonoanna@gmail.com',
     description='Testing installation of Package',
@@ -17,5 +17,12 @@ setuptools.setup(
     },
     license='MIT',
     packages=[], #list of packages that your package relies upon.
-    install_requires=['requests'], # these would be installed first.
+    install_requires=[ # these would be installed first.
+        'after_response',
+        'requests',
+        'Django<=3.2',
+        'nanoid',
+        'pypinyin',
+        'PIL'
+        ], 
 )
