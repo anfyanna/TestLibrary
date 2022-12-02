@@ -1,6 +1,5 @@
 from .banks.bank_list import bank_list
 from .banks.bank_need_vtw import bank_need_vtw
-from .banks.bank_type_dict import bank_type_dict
 # from .ddscs.ddsc_519_files import *
 # from .ddscs.ddsc_data_format import ddsc_data_format
 # from .ddscs.oa_clean import *
