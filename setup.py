@@ -18,11 +18,11 @@ setuptools.setup(
     license='MIT',
     packages=[], #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
-        'after_response',
-        'requests',
-        'Django<=3.2',
-        'nanoid',
-        'pypinyin',
-        'PIL'
+        # 'after_response',
+        # 'requests',
+        # 'Django<=3.2',
+        # 'nanoid',
+        # 'pypinyin',
+        # 'PIL'
         ], 
 )
