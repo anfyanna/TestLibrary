@@ -4,23 +4,20 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='module_b',
+    name='PKConstants',
     version='0.0.0',
     author='Anna Liu',
     author_email='sonoanna@gmail.com',
     description='Testing installation of Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/anfyanna/TestLibrary/module_b',
+    url='https://github.com/anfyanna/TestLibrary/PKConstants',
     project_urls = {
-        "Bug Tracker": "https://github.com/mike-huls/toolbox/issues"
     },
     license='MIT',
     packages=[
-        'module_b',
-        # 'pklib.constants',
-        # 'pklib.utils',
-        # 'pklib.constants.banks'
+        'pk_constants',
+        'pk_constants.constants',
         ], #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
         # 'after_response',
