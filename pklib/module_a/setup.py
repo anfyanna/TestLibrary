@@ -17,9 +17,9 @@ setuptools.setup(
     },
     license='MIT',
     packages=[
-        'pklib',
-        'pklib.constants',
-        'pklib.utils',
+        'module_a',
+        # 'pklib.constants',
+        # 'pklib.utils',
         # 'pklib.constants.banks'
         ], #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
