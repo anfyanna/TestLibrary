@@ -16,7 +16,12 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/mike-huls/toolbox/issues"
     },
     license='MIT',
-    packages=[], #list of packages that your package relies upon.
+    packages=[
+        'pklib',
+        'pklib.constants',
+        'pklib.utils',
+        # 'pklib.constants.banks'
+        ], #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
         # 'after_response',
         # 'requests',
