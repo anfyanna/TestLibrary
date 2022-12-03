@@ -1,4 +1,5 @@
 from ..constants.districts import full_data, zip_code
+from ..constants.banks import bank_list
 
 
 def get_zip_code(city: str, district: str) -> str:
@@ -48,3 +49,32 @@ def get_district_info(zip_code: str):
     '''
     r = get_full_district_info(zip_code)
     return r.get('city', ''), r.get('district', '')
+
+
+def get_bank_info(code: str) -> dict:
+    '''
+    取得銀行資訊
+
+    Args:
+        code (str): 銀行代號
+
+    Returns:
+        dict: 銀行資訊
+    '''
+    for bank in bank_list:
+        if bank.get('code', '') == code:
+            return bank
+    return {}
+
+
+def get_bank_name(code: str) -> str:
+    '''
+    取得銀行名稱
+
+    Args:
+        code (str): 銀行代號
+
+    Returns:
+        str: 銀行名
+    '''
+    return get_bank_info(code).get('name')

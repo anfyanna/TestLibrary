@@ -1,7 +1,7 @@
 import random
 
 
-def generate_string(length=6, chars='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'):
+def generate_string(length: str = 6, chars: str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'):
     '''
     隨機字串
     '''
@@ -24,4 +24,4 @@ def strB2Q(ustring):
 
 
 if __name__ == '__main__':
-    print(zip_code)
+    pass
