@@ -21,8 +21,7 @@ setup(
     license='MIT',
     packages=find_packages(), #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
-        'requests',
-        # 'requests',
+        'pypinyin<=0.47.1'
         # 'Django<=3.2',
         # 'nanoid',
         # 'pypinyin',

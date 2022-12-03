@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from ..constants.districts import full_data, zip_code
 from ..constants.banks import bank_list
 
@@ -78,3 +80,34 @@ def get_bank_name(code: str) -> str:
         str: 銀行名
     '''
     return get_bank_info(code).get('name')
+
+
+def try_parse_datetime(text: str, format):
+    '''
+    嘗試將字串轉為datetime
+    轉換將包含：
+    ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%S.%f%z', '%Y-%m-%dT%H:%M:%S.%f']
+
+    Args:
+        text (str): datetime字串
+        format (str | list)): 可能的格式，可為str或list
+
+    Raises:
+        ValueError: 無可用格式
+
+    Returns:
+        datetime, str: 轉換後的datetime, 格式
+    '''
+    try_formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%S.%f%z', '%Y-%m-%dT%H:%M:%S.%f']
+
+    if isinstance(format, str):
+        try_formats.append(format)
+    elif isinstance(format, list):
+        try_formats += format
+
+    for fmt in try_formats:
+        try:
+            return datetime.strptime(text, fmt), fmt
+        except ValueError:
+            pass
+    raise ValueError('no valid date format found')

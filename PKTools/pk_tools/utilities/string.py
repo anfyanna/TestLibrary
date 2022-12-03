@@ -1,6 +1,8 @@
 import random
 import hashlib
 
+from pypinyin import lazy_pinyin
+
 
 def generate_string(length: str = 6, chars: str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'):
     '''
@@ -70,6 +72,25 @@ def get_encoded_str(data: str, fill_str: str = '*', pre_len: int = 1, suf_len: i
     else:
         s = data[:pre_len] + (fill_str*(len(data)-(pre_len+suf_len))) + data[-suf_len:]
     return s
+
+
+def convert_to_pinyin(word: str) -> str:
+    '''
+    將中文字轉為拼音
+
+    Args:
+        word (str): 中文字串
+
+    Raises:
+        TypeError: 傳入類型錯誤
+
+    Returns:
+        str: 拼音文字字串
+    '''
+    if not isinstance(word, str):
+        raise TypeError(f"Value should be string, not {type(word)}.")
+    converted_word = lazy_pinyin(word)
+    return ' '.join(converted_word).title()
 
 
 if __name__ == '__main__':
