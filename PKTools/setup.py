@@ -1,26 +1,27 @@
-import setuptools
+from __future__ import absolute_import
+from __future__ import print_function
+
+from setuptools import setup, find_packages
+
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(
-    name='PKConstants',
+setup(
+    name='PKTools',
     version='0.0.0',
     author='Anna Liu',
-    author_email='sonoanna@gmail.com',
-    description='Testing installation of Package',
+    author_email='sonoanna@pocket.tw',
+    description='Package for Pocket python projects.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/anfyanna/TestLibrary/PKConstants',
+    url='https://github.com/anfyanna/TestLibrary/',
     project_urls = {
     },
     license='MIT',
-    packages=[
-        'pk_constants',
-        'pk_constants.constants',
-        ], #list of packages that your package relies upon.
+    packages=find_packages(), #list of packages that your package relies upon.
     install_requires=[ # these would be installed first.
-        # 'after_response',
+        'requests',
         # 'requests',
         # 'Django<=3.2',
         # 'nanoid',
